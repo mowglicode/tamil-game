@@ -1,0 +1,10 @@
+#wrapper{
+    text-align: center;
+}
+#wrapper #tl-letter {
+    font-size: 4em;
+}
+
+#wrapper button {
+    margin-top: 10px;
+}

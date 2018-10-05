@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tamil Learning</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Tamil Learning</a>
+    </nav>
+    <div class="container mt-3">
+        <p>
+            Petit "jeu" simple pour apprendre l'alphabet tamoul. <br>
+            Pour le moment il ne gère que les voyelles. 😅
+        </p>
+        <p>
+            Si <strong>Aleck</strong> fait 30/30, il ramène des chouquettes ou chocolatine 🥐 !
+            <small>(Oui je sais l'emoji c'est un croissant et non pas une chocolatine)</small>
+        </p>
+    </div>
+    <hr class="my-4">
+    <div class="container">
+        <div id="wrapper">
+            <p>
+                Score : <span id="score">0</span> <br>
+                <span class="message">
+                    
+                </span>
+            </p>
+            <span id="tl-letter"></span>
+            <input type="text" class="form-control" placeholder="Tape la phonétique correspondante">
+            <button class="btn btn-success">Je valide !</button>
+        </div>
+    </div>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="vowels.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
