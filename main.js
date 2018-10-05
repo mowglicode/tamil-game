@@ -24,15 +24,19 @@ $(document).ready(function () {
     
         $('button').click(function (e) {
             let input = $('input').val();
+            input = input.toLowerCase();
             e.preventDefault();
             if (input === vowel.fr) {
+                $('.message').removeClass('text-danger');
                 $('.message').addClass('text-success');
                 $('.message').text('Bonne réponse !');
                 score += 1;
             } else {
-                $('.message').addClass('text-danger');
+                $('.message').toggleClass('text-success');
+                $('.message').toggleClass('text-danger');
                 $('.message').text('Mauvaise réponse 😔 ' + vowel.tl + ' : ' + vowel.fr);
             }
+            $('input').val('');
             counter += 1;
             random = Math.floor(Math.random() * vowels.length);
             vowel = vowels[random];
