@@ -31,9 +31,10 @@ $(document).ready(function () {
         { tl: 'ன்', fr: 'n' }
     ];
 
+    let mistakes = [];
     let random = Math.floor(Math.random() * letters.length);
 
-    function getletters(letters, random) {
+    function getletters(letters, random, mistakes) {
 
         let letter = letters[random];
         let score = 0;
@@ -48,11 +49,17 @@ $(document).ready(function () {
                 $('.message').addClass('text-success');
                 $('.message').text('Bonne réponse !');
                 score += 1;
+                const index = letters.indexOf(letter);
+                letters.splice(index, 1);
+
             } else {
                 $('.message').removeClass('text-success');
                 $('.message').addClass('text-danger');
                 $('.message').text('Mauvaise réponse 😔 ' + letter.tl + ' : ' + letter.fr);
             }
+            if(letters.length === 0 && counter === 29) {
+                alert('🎉 BRAVO ! Tu as fait 60/60. Tu es presque Tamoul');
+            } 
             $('input').val('');
             counter += 1;
             random = Math.floor(Math.random() * letters.length);
@@ -60,12 +67,9 @@ $(document).ready(function () {
             $('#wrapper #tl-letter').text(letter.tl);
             $('#wrapper #score').text(score + '/' + counter);
         });
-
-
-
     }
     $('#wrapper #tl-letter').text(letters[random].tl);
-    getletters(letters, random);
+    getletters(letters, random, mistakes);
 
 
 
